@@ -1,0 +1,338 @@
+/* VERSION 2 — style bouillon parisien (lettres à l'ancienne, filets, cadres,
+   menu imprimé) avec les couleurs du restaurant, reprises du logo. */
+:root {
+  --beige: #f8f4e8;
+  --beige-fonce: #f2ebd5;
+  --beige-logo: #ebe4c9;
+  --olive-nuit: #3a3a27;
+  --olive: #6b6a4c;
+  --olive-fonce: #545339;
+  --sable: #b3ab86;
+  --texte: #33321f;
+  --texte-doux: #646349;
+  --ligne: #d9d1b6;
+
+  --titre: "Playfair Display", Didot, Georgia, serif;
+  --corps: "Libre Baskerville", Georgia, serif;
+  --capitales: "Jost", "Futura", system-ui, sans-serif;
+
+  --largeur: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  margin: 0;
+  background: var(--beige);
+  color: var(--texte);
+  font: 16px/1.7 var(--corps);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4 { margin: 0 0 .5em; line-height: 1.1; font-family: var(--titre); font-weight: 900; }
+h2 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  text-transform: uppercase; letter-spacing: .02em;
+  color: var(--olive-nuit);
+}
+h3 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: .06em; }
+h4 { font-weight: 700; font-style: italic; font-size: 1.25rem; color: var(--olive); margin-top: 1.4em; }
+p { margin: 0 0 1em; }
+
+.conteneur { width: min(var(--largeur), 100% - 32px); margin-inline: auto; }
+.surtitre {
+  font: 500 .78rem var(--capitales); text-transform: uppercase; letter-spacing: .28em;
+  color: var(--olive); margin-bottom: .6em;
+}
+section { padding-block: clamp(56px, 9vw, 104px); }
+
+/* Petit ornement sous les grands titres */
+.carte-tete h2::after, .histoire-texte h2::after, .infos-texte h2::after {
+  content: "✦"; display: block; margin-top: .3em;
+  font-size: .9rem; letter-spacing: 0; color: var(--sable);
+}
+
+/* ---------- Boutons ---------- */
+.boutons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.bouton {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4em;
+  padding: .9em 1.7em;
+  font: 500 .85rem var(--capitales); text-transform: uppercase; letter-spacing: .16em;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  transition: background .2s, color .2s;
+}
+.bouton-plein { background: var(--olive-fonce); color: var(--beige-logo); }
+.bouton-plein:hover { background: var(--olive-nuit); }
+.bouton-contour { border-color: var(--olive-nuit); color: var(--olive-nuit); }
+.bouton-contour:hover { background: var(--olive-nuit); color: var(--beige); }
+.bouton-creme { background: var(--beige-logo); color: var(--olive-nuit); }
+.bouton-creme:hover { background: #fff; }
+
+/* ---------- Annonce ---------- */
+.annonce {
+  background: var(--olive); color: var(--beige); text-align: center;
+  padding: .6em 16px; font: 500 .85rem var(--capitales); letter-spacing: .12em; text-transform: uppercase;
+}
+
+/* ---------- En-tête ---------- */
+.entete {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 24px;
+  padding: 10px max(16px, (100% - var(--largeur)) / 2);
+  background: var(--olive-nuit);
+  color: var(--beige);
+  border-bottom: 3px double var(--sable);
+}
+.entete-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.entete-logo img { width: 40px; height: auto; }
+.entete-logo span { font: 900 1.05rem var(--titre); text-transform: uppercase; letter-spacing: .08em; }
+.menu { display: flex; gap: 28px; margin-left: auto; }
+.menu a {
+  text-decoration: none; font: 500 .8rem var(--capitales); text-transform: uppercase; letter-spacing: .18em;
+  padding-block: 4px; border-bottom: 1px solid transparent;
+}
+.menu a:hover { border-color: var(--sable); color: #fff; }
+.langues { display: flex; }
+.langues button {
+  background: none; border: 0; color: var(--beige); cursor: pointer; opacity: .55;
+  font: 500 .78rem var(--capitales); letter-spacing: .14em; padding: 6px 8px;
+}
+.langues button[aria-pressed="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--sable); }
+
+/* ---------- Accueil : couverture de menu ---------- */
+.hero { padding-block: clamp(28px, 5vw, 56px) clamp(40px, 6vw, 72px); }
+.couverture {
+  text-align: center;
+  border: 1px solid var(--olive-nuit);
+  outline: 1px solid var(--olive-nuit); outline-offset: 6px;
+  padding: clamp(32px, 6vw, 72px) 20px clamp(32px, 5vw, 56px);
+  margin: 6px;
+}
+.hero-lieu { font: 500 .78rem var(--capitales); text-transform: uppercase; letter-spacing: .3em; color: var(--olive); }
+.hero-lieu span { color: var(--sable); margin: 0 .6em; }
+.hero-logo { width: 96px; height: auto; margin: 10px auto 14px; }
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 7.6rem); text-transform: uppercase; letter-spacing: .01em; line-height: .9;
+  color: var(--olive-nuit); margin-bottom: .1em;
+}
+.hero h1 small {
+  display: block; font-size: .28em; font-style: italic; font-weight: 400; text-transform: none;
+  letter-spacing: 0; margin-bottom: .1em;
+}
+.hero-genre {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  font: italic 700 clamp(1.5rem, 3.4vw, 2.3rem) var(--titre); color: var(--olive);
+}
+.hero-genre::before, .hero-genre::after { content: ""; width: min(120px, 18vw); border-top: 3px double var(--olive); }
+.hero-accroche { max-width: 34em; margin: 0 auto 1.8em; font-style: italic; color: var(--texte-doux); }
+
+.hero-photos { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 14px; margin-top: 28px; }
+.hero-photos img { width: 100%; height: clamp(220px, 30vw, 360px); object-fit: cover; border: 1px solid var(--olive-nuit); padding: 5px; background: var(--beige); }
+
+/* ---------- Bandeau ---------- */
+.bandeau {
+  list-style: none; margin: 0; padding: 14px 16px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 0;
+  background: var(--olive); color: var(--beige);
+  font: 500 .8rem var(--capitales); text-transform: uppercase; letter-spacing: .2em;
+}
+.bandeau li { display: flex; align-items: center; }
+.bandeau li + li::before { content: "✦"; margin: 0 20px; opacity: .7; }
+
+/* ---------- Carte : menu imprimé ---------- */
+.carte { background: var(--beige-fonce); }
+.menu-papier {
+  background: var(--beige);
+  border: 1px solid var(--ligne);
+  box-shadow: 0 1px 0 #fff inset, 0 18px 40px -24px rgb(58 58 39 / .35);
+  padding: clamp(28px, 6vw, 72px) clamp(18px, 5vw, 64px);
+  position: relative;
+}
+.menu-papier::before {
+  content: ""; position: absolute; inset: 10px; border: 1px solid var(--olive); pointer-events: none;
+}
+.carte-tete { text-align: center; margin-bottom: 36px; }
+.carte-intro { font-style: italic; color: var(--texte-doux); margin-bottom: .6em; }
+.carte-prix {
+  display: inline-block; margin: 0;
+  font: 900 1.7rem var(--titre); color: var(--olive);
+  border-top: 3px double var(--olive); border-bottom: 3px double var(--olive);
+  padding: 2px 18px;
+}
+
+.burgers { display: grid; grid-template-columns: 1fr 1fr; counter-reset: burger; }
+.burger {
+  counter-increment: burger;
+  display: grid; grid-template-columns: 120px 1fr; gap: 20px; align-items: start;
+  padding: 26px 28px; border-top: 1px solid var(--ligne);
+}
+.burger:nth-child(odd) { border-right: 1px solid var(--ligne); padding-left: 0; }
+.burger:nth-child(even) { padding-right: 0; }
+.burger img { width: 120px; height: 150px; object-fit: cover; border: 1px solid var(--olive-nuit); padding: 4px; background: var(--beige); }
+.burger-corps::before {
+  content: "N° " counter(burger);
+  display: block; font: 500 .72rem var(--capitales); letter-spacing: .24em; color: var(--olive); margin-bottom: .4em;
+}
+.burger h3 { font-size: 1.35rem; margin-bottom: .35em; }
+.burger-corps p { color: var(--texte-doux); font-style: italic; font-size: .92rem; margin: 0; }
+.pastille {
+  display: inline-block; vertical-align: middle;
+  border: 1px solid var(--olive); color: var(--olive);
+  font: 500 .62rem var(--capitales); letter-spacing: .14em; text-transform: uppercase;
+  padding: 2px 7px;
+}
+
+.moment {
+  margin-top: 40px;
+  display: grid; grid-template-columns: 1fr 1.2fr; align-items: stretch;
+  background: var(--olive-nuit); color: var(--beige);
+  border: 1px solid var(--olive-nuit); outline: 1px solid var(--sable); outline-offset: -10px;
+}
+.moment img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+.moment-texte { padding: clamp(28px, 5vw, 56px); align-self: center; text-align: center; }
+.moment-etiquette {
+  font: italic 700 clamp(1.8rem, 3.6vw, 2.5rem)/1.1 var(--titre); color: var(--beige); margin-bottom: .4em;
+}
+.moment .surtitre { color: var(--sable); }
+.moment h3 { color: #fff; font-size: 1.5rem; }
+.moment h3:empty { display: none; }
+.moment-desc { font-style: italic; }
+.moment-note { opacity: .7; font-size: .85rem; margin: 0; }
+
+.carte-bas { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 48px; border-top: 3px double var(--olive-nuit); padding-top: 32px; }
+.bloc { padding: 0 28px; }
+.bloc:first-child { padding-left: 0; }
+.bloc:last-child { padding-right: 0; }
+.bloc + .bloc { border-left: 1px solid var(--ligne); }
+.bloc h3 { text-align: center; font-size: 1.25rem; }
+.bloc-sous { font-style: italic; color: var(--texte-doux); font-size: .88rem; text-align: center; margin-top: -.4em; }
+.bloc h4 { text-align: center; }
+.bloc-detail { color: var(--texte-doux); font-size: .86rem; font-style: italic; }
+.prix-liste { list-style: none; margin: 0 0 1em; padding: 0; }
+.prix-liste li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; padding: 5px 0; font-size: .95rem; }
+/* nom ........ prix, comme sur les menus imprimés */
+.prix-liste li > span:first-child { flex: 1; display: flex; align-items: baseline; gap: 8px; }
+.prix-liste li > span:first-child::after { content: ""; flex: 1; min-width: 14px; border-bottom: 1.5px dotted var(--texte-doux); }
+.prix-liste .prix { font: 700 1rem var(--titre); color: var(--olive); white-space: nowrap; }
+.prix-liste small { width: 100%; color: var(--texte-doux); font-style: italic; font-size: .82rem; }
+.allergenes { text-align: center; color: var(--texte-doux); font-style: italic; font-size: .88rem; margin: 36px 0 0; }
+
+/* ---------- Histoire ---------- */
+.histoire-grille { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(32px, 6vw, 88px); align-items: center; }
+.cadre { margin: 0; border: 1px solid var(--olive-nuit); padding: 8px; outline: 1px solid var(--sable); outline-offset: 6px; }
+.cadre img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.histoire-texte div p { color: var(--texte-doux); }
+.histoire-texte div p:first-child::first-letter {
+  float: left; font: 900 4.2rem/.8 var(--titre); color: var(--olive); margin: .08em .1em 0 0;
+}
+
+/* ---------- Le matin + À emporter ---------- */
+.duo { background: var(--olive-nuit); color: var(--beige); }
+.duo-grille { display: grid; grid-template-columns: 1fr 1fr; }
+.duo-grille > * { min-width: 0; padding: 8px clamp(20px, 4vw, 56px); }
+.duo-grille > :first-child { padding-left: 0; border-right: 1px solid rgb(179 171 134 / .5); }
+.duo-grille > :last-child { padding-right: 0; }
+.duo h2 { color: var(--beige); font-size: clamp(1.8rem, 3.6vw, 2.6rem); }
+.duo .surtitre { color: var(--sable); }
+.duo p { color: rgb(235 228 201 / .85); }
+.formule { border: 1px solid var(--sable); padding: 18px 22px; margin-top: 1.4em; text-align: center; }
+.formule-titre { font: 700 1.3rem var(--titre); color: var(--beige) !important; margin-bottom: .3em; }
+.formule-titre strong { color: var(--sable); margin-left: .3em; }
+.formule p:last-child { margin: 0; }
+.formule-option { font-style: italic; }
+.etapes { list-style: none; counter-reset: etape; padding: 0; margin: 1.4em 0 1.8em; display: grid; gap: 14px; }
+.etapes li { counter-increment: etape; display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; }
+.etapes li::before {
+  content: counter(etape, upper-roman); grid-row: span 2;
+  font: 700 1.5rem/1.2 var(--titre); color: var(--sable);
+}
+.etapes strong { color: #fff; font-family: var(--titre); font-size: 1.1rem; }
+.etapes span { opacity: .82; font-size: .9rem; }
+.bientot { margin: 1.2em 0 0; font-size: .85rem; font-style: italic; opacity: .7; }
+
+/* ---------- Galerie de cadres ---------- */
+.galerie { padding-block: clamp(40px, 6vw, 72px) 0; }
+.galerie-grille { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.galerie-grille img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--olive-nuit); padding: 4px; background: var(--beige); }
+
+/* ---------- Infos ---------- */
+.infos-grille { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(28px, 5vw, 64px); }
+.infos-grille > * { min-width: 0; }
+.infos h3 { margin-top: 1.4em; font-size: 1.05rem; color: var(--olive); }
+.adresse { font: 700 1.2rem var(--titre); }
+.acces { padding-left: 1.2em; margin: 0 0 1.4em; color: var(--texte-doux); font-size: .95rem; }
+.acces li::marker { content: "✦  "; color: var(--sable); font-size: .7em; }
+.horaires { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; margin: 0 0 1em; font-size: .95rem; }
+.horaires dt { font-weight: 700; }
+.horaires dd { margin: 0; color: var(--texte-doux); }
+.plan { width: 100%; height: 100%; min-height: 420px; border: 1px solid var(--olive-nuit); padding: 6px; background: var(--beige); filter: sepia(.25); }
+
+/* ---------- Pied de page ---------- */
+.pied {
+  background: var(--olive-nuit); color: var(--beige); text-align: center;
+  padding: 56px 16px 100px; border-top: 3px double var(--sable);
+}
+.pied img { margin: 0 auto 14px; }
+.pied-nom { font: 900 1.6rem var(--titre); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .4em; }
+.pied a { text-decoration: none; }
+.pied a:hover { text-decoration: underline; }
+.reseaux { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; font: 500 .8rem var(--capitales); letter-spacing: .16em; text-transform: uppercase; }
+.pied-petit { font-size: .78rem; opacity: .55; margin: 24px 0 0; }
+
+/* ---------- Repère de comparaison ---------- */
+.repere-version {
+  position: fixed; right: 16px; bottom: 16px; z-index: 40;
+  background: var(--sable); color: var(--olive-nuit);
+  font: 500 .75rem var(--capitales); letter-spacing: .06em; text-decoration: none;
+  padding: 8px 14px; border-radius: 999px; box-shadow: 0 6px 18px rgb(0 0 0 / .25);
+}
+
+/* ---------- Bouton d'appel fixe (mobile) ---------- */
+.appel-mobile { display: none; }
+
+/* ---------- Tablette ---------- */
+@media (max-width: 980px) {
+  .burgers { grid-template-columns: 1fr; }
+  .burger, .burger:nth-child(odd), .burger:nth-child(even) { padding-inline: 0; border-right: 0; }
+  .carte-bas { grid-template-columns: 1fr 1fr; row-gap: 36px; }
+  .bloc:nth-child(2) { padding-right: 0; }
+  .bloc:last-child { grid-column: 1 / -1; padding-left: 0; border-left: 0; border-top: 1px solid var(--ligne); padding-top: 28px; }
+  .galerie-grille { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Téléphone ---------- */
+@media (max-width: 720px) {
+  .menu { display: none; }
+  .langues { margin-left: auto; }
+  .hero-photos { grid-template-columns: 1fr 1fr; }
+  .hero-photos img { height: 200px; }
+  .hero-photos img:nth-child(2) { grid-column: 1 / -1; order: -1; height: 230px; }
+  .burger { grid-template-columns: 90px 1fr; gap: 16px; padding-block: 20px; }
+  .burger img { width: 90px; height: 112px; }
+  .moment, .histoire-grille, .infos-grille, .duo-grille { grid-template-columns: 1fr; }
+  .moment img { min-height: 0; aspect-ratio: 4 / 3; }
+  .carte-bas { grid-template-columns: 1fr; }
+  .bloc, .bloc:first-child, .bloc:nth-child(2), .bloc:last-child { padding: 0; border-left: 0; border-top: 0; grid-column: auto; }
+  .bloc + .bloc { border-top: 1px solid var(--ligne); padding-top: 28px; margin-top: 28px; }
+  .duo-grille > *, .duo-grille > :first-child, .duo-grille > :last-child { padding: 0; border-right: 0; }
+  .duo-grille > :first-child { border-bottom: 1px solid rgb(179 171 134 / .5); padding-bottom: 36px; margin-bottom: 36px; }
+  .galerie-grille { grid-template-columns: repeat(2, 1fr); }
+  .plan { min-height: 300px; }
+  .bandeau { gap: 6px 18px; font-size: .72rem; }
+  .bandeau li + li::before { display: none; }
+  .appel-mobile {
+    display: flex; align-items: center; justify-content: center;
+    position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 30;
+    padding: 14px; background: var(--olive); color: var(--beige); text-decoration: none;
+    font: 500 .9rem var(--capitales); text-transform: uppercase; letter-spacing: .14em;
+    box-shadow: 0 8px 24px rgb(0 0 0 / .3);
+  }
+  .appel-mobile::before { content: "☎"; margin-right: .5em; }
+  .repere-version { bottom: auto; top: 70px; right: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .bouton { transition: none; }
+}

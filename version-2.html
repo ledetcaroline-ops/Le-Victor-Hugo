@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le Victor Hugo Burger — Burgers maison à Montreuil-sur-Mer</title>
+  <meta name="description" content="Burgers faits maison avec des produits locaux, sur la place Gambetta à Montreuil-sur-Mer. Terrasse, sans réservation, à emporter par téléphone au 03 21 06 88 37.">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <meta property="og:title" content="Le Victor Hugo Burger — Montreuil-sur-Mer">
+  <meta property="og:description" content="Burgers maison, produits locaux, terrasse sur la place Gambetta.">
+  <meta property="og:image" content="images/terrasse.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-v2.css">
+  <!-- VERSION 2 du site (style bouillon parisien), à comparer avec index.html.
+       Elle utilise le même contenu.js et les mêmes photos : une modification
+       de la carte se voit sur les deux versions. -->
+</head>
+<body>
+
+  <div class="annonce" id="annonce" hidden></div>
+
+  <header class="entete" id="haut">
+    <a href="#haut" class="entete-logo" aria-label="Le Victor Hugo Burger, accueil">
+      <img src="images/logo-beige.svg" alt="" width="44" height="42">
+      <span>Le Victor Hugo</span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="#carte" data-t="nav.carte">La carte</a>
+      <a href="#matin" data-t="nav.matin">Le matin</a>
+      <a href="#emporter" data-t="nav.emporter">À emporter</a>
+      <a href="#infos" data-t="nav.infos">Infos &amp; accès</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Accueil : comme la couverture d'un menu ===== -->
+    <section class="hero">
+      <div class="conteneur">
+        <div class="couverture">
+          <p class="hero-lieu">Montreuil-sur-Mer <span aria-hidden="true">✦</span> Place Gambetta</p>
+          <img class="hero-logo" src="images/logo-olive.svg" alt="" width="120" height="114">
+          <h1><small>Le</small> Victor Hugo</h1>
+          <p class="hero-genre"><span>Burger</span></p>
+          <p class="hero-accroche" data-c="accroche"></p>
+          <div class="boutons">
+            <a class="bouton bouton-plein" href="#carte" data-t="hero.carte">Voir la carte</a>
+            <a class="bouton bouton-contour" data-tel href="#"><span data-t="hero.emporter">Commander à emporter</span></a>
+          </div>
+        </div>
+        <div class="hero-photos">
+          <img src="images/vitrine.jpg" alt="La vitrine du Victor Hugo donnant sur la place">
+          <img src="images/terrasse.jpg" alt="La terrasse du Victor Hugo sur la place Gambetta au coucher du soleil">
+          <img src="images/burger-victor-hugo.jpg" alt="Le burger Victor Hugo, cheddar fondant, sur une assiette verte">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Bandeau infos ===== -->
+    <ul class="bandeau">
+      <li data-t="bandeau.jours">Du mardi au samedi</li>
+      <li data-t="bandeau.resa">Sans réservation</li>
+      <li data-t="bandeau.surplace">Sur place ou à emporter</li>
+    </ul>
+
+    <!-- ===== La carte : menu imprimé ===== -->
+    <section class="carte" id="carte">
+      <div class="conteneur menu-papier">
+        <div class="carte-tete">
+          <p class="surtitre" data-c="saison"></p>
+          <h2 data-t="carte.titre">Les burgers</h2>
+          <p class="carte-intro"><span data-t="carte.intro">Tous nos burgers sont servis avec frites ou coleslaw maison</span></p>
+          <p class="carte-prix" data-c="prixBurger"></p>
+        </div>
+
+        <div class="burgers" id="burgers"></div>
+
+        <article class="moment" id="moment">
+          <img src="" alt="" loading="lazy">
+          <div class="moment-texte">
+            <p class="moment-etiquette" data-t="moment.titre">Burger du moment</p>
+            <p class="surtitre" id="moment-mois"></p>
+            <h3 id="moment-nom"></h3>
+            <p class="moment-desc" id="moment-desc"></p>
+            <p class="moment-note" data-t="moment.note">Venez découvrir chaque mois un nouveau burger.</p>
+          </div>
+        </article>
+
+        <div class="carte-bas">
+          <div class="bloc">
+            <h3 data-t="carte.cotes">À côté</h3>
+            <ul class="prix-liste" id="accompagnements"></ul>
+            <h4 data-t="carte.supplements">Suppléments</h4>
+            <ul class="prix-liste" id="supplements"></ul>
+          </div>
+          <div class="bloc">
+            <h3 data-t="carte.enfant">Menu enfant</h3>
+            <p class="bloc-sous" id="enfant-age"></p>
+            <ul class="prix-liste"><li><span id="enfant-nom"></span><span id="enfant-prix"></span></li></ul>
+            <p class="bloc-detail" id="enfant-desc"></p>
+          </div>
+          <div class="bloc">
+            <h3 data-t="carte.desserts">Desserts</h3>
+            <ul class="prix-liste" id="desserts"></ul>
+            <h4 data-t="carte.glaces">Glaces</h4>
+            <p class="bloc-sous" id="glaces-detail"></p>
+            <ul class="prix-liste" id="glaces-prix"></ul>
+            <p class="bloc-detail" id="glaces-parfums"></p>
+            <p class="bloc-detail" id="glaces-supp"></p>
+          </div>
+        </div>
+        <p class="allergenes" data-t="carte.allergenes">Une allergie ou une question sur un plat ? Demandez-nous, on vous dit tout sur nos ingrédients.</p>
+      </div>
+    </section>
+
+    <!-- ===== Histoire ===== -->
+    <section class="histoire">
+      <div class="conteneur histoire-grille">
+        <figure class="cadre">
+          <img src="images/equipe.jpg" alt="L’équipe du Victor Hugo devant la devanture verte du restaurant" loading="lazy">
+        </figure>
+        <div class="histoire-texte">
+          <p class="surtitre" data-t="histoire.surtitre">Notre histoire</p>
+          <h2 data-t="histoire.titre">Le burger, version fait maison</h2>
+          <div data-c="histoire"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Le matin + À emporter ===== -->
+    <section class="duo">
+      <div class="conteneur duo-grille">
+        <div class="matin" id="matin">
+          <p class="surtitre" data-t="matin.surtitre">Dès 9h30</p>
+          <h2 data-t="matin.titre">Le matin, on vous attend aussi</h2>
+          <p data-t="matin.intro">Le bar est ouvert toute la journée. Découvrez notre formule petit-déjeuner :</p>
+          <div class="formule">
+            <p class="formule-titre"><span data-t="matin.formule">Formule petit-déj</span> <strong id="petitdej-prix"></strong></p>
+            <p id="petitdej-desc"></p>
+            <p id="petitdej-choix"></p>
+            <p class="formule-option" id="petitdej-option"></p>
+          </div>
+          <p class="formule-option" id="petitdej-gourmands"></p>
+        </div>
+
+        <div class="emporter" id="emporter">
+          <p class="surtitre" data-t="emporter.surtitre">À emporter</p>
+          <h2 data-t="emporter.titre">Envie d’un burger à la maison ?</h2>
+          <p data-t="emporter.intro">On ne prend pas de réservation pour manger sur place : venez directement, on vous trouve une table. Pour emporter, un simple coup de fil suffit.</p>
+          <ol class="etapes">
+            <li><strong data-t="emporter.e1t">Appelez-nous</strong><span data-t="emporter.e1">Pendant les heures d’ouverture, dites-nous ce qui vous fait envie.</span></li>
+            <li><strong data-t="emporter.e2t">On vous donne l’heure</strong><span data-t="emporter.e2">Le délai dépend du monde en cuisine, on vous dit quand passer.</span></li>
+            <li><strong data-t="emporter.e3t">Passez récupérer</strong><span data-t="emporter.e3">Votre commande vous attend au 3 place Gambetta, bien chaude.</span></li>
+          </ol>
+          <a class="bouton bouton-creme" data-tel href="#"><span data-t="emporter.appel">Appeler le</span> <span data-c="telephone"></span></a>
+          <p class="bientot" data-t="emporter.bientot">Bientôt : la commande en ligne, directement sur ce site.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Photos : galerie de cadres ===== -->
+    <section class="galerie" aria-label="Photos">
+      <div class="conteneur galerie-grille">
+        <img src="images/trio.jpg" alt="Trois burgers tenus devant un mur de briques" loading="lazy">
+        <img src="images/degustation.jpg" alt="Un client devant un burger au cheddar fondant" loading="lazy">
+        <img src="images/frites.jpg" alt="Frites maison et sauce" loading="lazy">
+        <img src="images/burger-lard.jpg" alt="Burger au lard sur une banquette rouge" loading="lazy">
+        <img src="images/tiramisu.jpg" alt="Tiramisu spéculoos maison" loading="lazy">
+        <img src="images/devanture.jpg" alt="Deux burgers devant la vitrine du Victor Hugo" loading="lazy">
+      </div>
+    </section>
+
+    <!-- ===== Infos & accès ===== -->
+    <section class="infos" id="infos">
+      <div class="conteneur infos-grille">
+        <div class="infos-texte">
+          <p class="surtitre" data-t="infos.surtitre">Infos pratiques</p>
+          <h2 data-t="infos.titre">Nous trouver</h2>
+          <h3 data-t="infos.adresse">Adresse</h3>
+          <p class="adresse" data-c="adresse"></p>
+          <ul class="acces">
+            <li data-t="infos.eglise">Sur la place Gambetta, en face de l’église</li>
+            <li data-t="infos.parking">Places de stationnement tout autour de la place</li>
+            <li data-t="infos.pmr">Accessible en fauteuil roulant</li>
+            <li data-t="infos.terrasse">Belle terrasse aux beaux jours</li>
+          </ul>
+          <a class="bouton bouton-plein" id="itineraire" target="_blank" rel="noopener" data-t="infos.itineraire">Itinéraire</a>
+
+          <h3 data-t="infos.horaires">Horaires</h3>
+          <dl class="horaires" id="horaires"></dl>
+          <p class="bloc-detail" data-t="infos.resa">Pas de réservation : premier arrivé, premier servi.</p>
+        </div>
+        <iframe class="plan" title="Plan : 3 place Gambetta, Montreuil-sur-Mer" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=3+place+Gambetta,+62170+Montreuil-sur-Mer&output=embed"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <img src="images/logo-beige.svg" alt="" width="96" height="91">
+    <p class="pied-nom">Le Victor Hugo</p>
+    <p><span data-c="adresse"></span><br><a data-tel href="#"><span data-c="telephone"></span></a></p>
+    <p class="reseaux" id="reseaux"></p>
+    <p class="pied-petit">© <span id="annee"></span> Le Victor Hugo Burger</p>
+  </footer>
+
+  <a class="appel-mobile" data-tel href="#"><span data-t="mobile.appel">Commander à emporter</span></a>
+
+  <!-- Repère pour comparer les deux versions (à retirer une fois le choix fait) -->
+  <a class="repere-version" href="index.html">Version 2 · voir la version 1</a>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

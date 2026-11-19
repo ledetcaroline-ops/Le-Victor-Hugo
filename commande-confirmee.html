@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commande confirmée — Le Victor Hugo Burger</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="commande.css">
+</head>
+<body>
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, retour au site">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+  </header>
+
+  <main class="commande conteneur">
+    <div class="commande-tete">
+      <img src="images/logo-olive.svg" alt="" width="140" height="132" style="margin: 0 auto 18px">
+      <h1 id="titre">Merci, c’est commandé !</h1>
+      <p class="commande-intro" id="texte">Votre paiement est bien passé. On s’occupe de votre commande.</p>
+      <p class="commande-intro" id="retrait" hidden></p>
+      <p class="commande-intro" id="adresse">À récupérer au 3 place Gambetta, à Montreuil-sur-Mer.</p>
+      <p><a class="bouton bouton-plein" href="index.html" id="retour">Retour au site</a></p>
+    </div>
+  </main>
+
+  <script>
+    /* Affiche l'heure de retrait choisie et vide le panier. */
+    let en = false;
+    try { en = localStorage.getItem("langue") === "en"; } catch (e) {}
+    let commande = {};
+    try { commande = JSON.parse(sessionStorage.getItem("derniereCommande")) || {}; } catch (e) {}
+    try { localStorage.removeItem("panier"); sessionStorage.removeItem("derniereCommande"); } catch (e) {}
+
+    if (en) {
+      document.documentElement.lang = "en";
+      document.getElementById("titre").textContent = "Thank you, your order is in!";
+      document.getElementById("texte").textContent = "Your payment went through. We’re preparing your order.";
+      document.getElementById("adresse").textContent = "Pick it up at 3 place Gambetta, Montreuil-sur-Mer.";
+      document.getElementById("retour").textContent = "Back to the site";
+    }
+    if (commande.retrait) {
+      const p = document.getElementById("retrait");
+      p.hidden = false;
+      p.textContent = (en ? "Pick-up time: " : "Heure de retrait : ") + commande.retrait.replace(":", "h");
+      p.style.fontWeight = "700";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commander à emporter — Le Victor Hugo Burger</title>
+  <meta name="description" content="Commandez vos burgers à emporter en ligne et passez les récupérer au 3 place Gambetta, Montreuil-sur-Mer.">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="commande.css">
+</head>
+<body>
+
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, retour au site">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+    <nav class="menu" aria-label="Navigation">
+      <a href="index.html" data-t="retour">← Retour au site</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main class="commande conteneur">
+    <div class="commande-tete">
+      <p class="surtitre" data-t="surtitre">À emporter</p>
+      <h1 data-t="titre">Commander en ligne</h1>
+      <p class="commande-intro" data-t="intro">Composez votre commande, payez par carte et passez la récupérer au 3 place Gambetta.</p>
+      <p class="ferme" id="ferme" hidden></p>
+    </div>
+
+    <div class="commande-grille">
+      <!-- ===== La carte ===== -->
+      <div class="commande-carte" id="carte"></div>
+
+      <!-- ===== Le panier ===== -->
+      <aside class="panier" id="panier" aria-labelledby="panier-titre">
+        <h2 id="panier-titre" data-t="panier">Votre commande</h2>
+        <p class="panier-vide" id="panier-vide" data-t="vide">Votre panier est vide.</p>
+        <ul class="panier-lignes" id="panier-lignes"></ul>
+        <p class="panier-total"><span data-t="total">Total</span> <strong id="total">0,00 €</strong></p>
+
+        <form id="formulaire" novalidate>
+          <label><span data-t="nom">Prénom et nom</span>
+            <input name="nom" autocomplete="name" required maxlength="60"></label>
+          <label><span data-t="telephone">Téléphone</span>
+            <input name="telephone" type="tel" autocomplete="tel" required maxlength="20" placeholder="06 12 34 56 78"></label>
+          <label><span data-t="retrait">Heure de retrait</span>
+            <select name="retrait" id="retrait" required></select></label>
+          <label><span data-t="commentaire">Une précision ? (allergie, cuisson…)</span>
+            <textarea name="commentaire" rows="2" maxlength="300"></textarea></label>
+          <p class="erreur" id="erreur" role="alert" hidden></p>
+          <button type="submit" class="bouton bouton-plein bouton-payer" id="payer"><span data-t="payer">Payer</span> <span id="payer-montant"></span></button>
+          <p class="securite" data-t="securite">Paiement sécurisé par carte bancaire via Stripe.</p>
+        </form>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Barre du panier sur téléphone -->
+  <a class="barre-panier" id="barre-panier" href="#panier" hidden>
+    <span><span data-t="voir">Voir ma commande</span> · <span id="barre-nombre"></span></span>
+    <strong id="barre-total"></strong>
+  </a>
+
+  <!-- Fenêtre de choix pour un burger ou le menu enfant -->
+  <dialog class="options" id="options">
+    <form method="dialog" id="options-form">
+      <h3 id="options-nom"></h3>
+      <p class="options-desc" id="options-desc"></p>
+      <fieldset id="options-acc"><legend data-t="accompagnement">Accompagnement</legend></fieldset>
+      <fieldset id="options-sup"><legend data-t="supplements">Suppléments</legend></fieldset>
+      <label id="options-parfum"><span data-t="parfum">Parfum de la glace</span><select></select></label>
+      <div class="options-bas">
+        <div class="quantite" aria-label="Quantité">
+          <button type="button" data-q="-1" aria-label="Moins">−</button>
+          <output id="options-quantite">1</output>
+          <button type="button" data-q="1" aria-label="Plus">+</button>
+        </div>
+        <button type="submit" class="bouton bouton-plein" value="ajouter"><span data-t="ajouter">Ajouter</span> · <span id="options-prix"></span></button>
+      </div>
+      <button type="submit" class="options-fermer" value="annuler" aria-label="Fermer">×</button>
+    </form>
+  </dialog>
+
+  <footer class="pied pied-commande">
+    <p><strong>Le Victor Hugo Burger</strong> · <span data-c="adresse"></span> · <a data-tel href="#"><span data-c="telephone"></span></a></p>
+  </footer>
+
+  <script src="contenu.js"></script>
+  <script src="catalogue.js"></script>
+  <script src="commande.js"></script>
+</body>
+</html>

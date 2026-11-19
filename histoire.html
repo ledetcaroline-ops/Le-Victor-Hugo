@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notre histoire — Le Victor Hugo Burger</title>
+  <meta name="description" content="Le Victor Hugo, un lieu de vie au cœur de Montreuil-sur-Mer : burgers maison, café le matin, pause gourmande et dîner à partager.">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="annonce" id="annonce" hidden></div>
+
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, accueil">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="histoire.html" aria-current="page" data-t="nav.histoire">Notre histoire</a>
+      <a href="carte.html" data-t="nav.carte">La carte</a>
+      <a href="emporter.html" data-t="nav.emporter">À emporter</a>
+      <a href="infos.html" data-t="nav.infos">Infos &amp; accès</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="histoire conteneur">
+      <div class="histoire-texte">
+        <p class="surtitre" data-t="histoire.surtitre">Notre histoire</p>
+        <h1 class="titre-page" data-t="histoire.titre">Le burger, version fait maison</h1>
+        <div data-c="histoire"></div>
+      </div>
+      <div class="histoire-photos">
+        <img src="images/photographe/ambiance-victor-hugo.jpg" alt="Le burger Victor Hugo et ses frites, entre plantes et vieux livres">
+        <img src="images/montreuil.jpg" alt="Une ruelle de Montreuil-sur-Mer, t-shirt Victor Hugo">
+      </div>
+    </section>
+
+    <section class="suite conteneur">
+      <a class="bouton bouton-plein" href="carte.html" data-t="suite.carte">Découvrir la carte</a>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <img src="images/logo-beige.svg" alt="" width="110" height="104">
+    <p><strong>Le Victor Hugo Burger</strong><br><span data-c="adresse"></span></p>
+    <p><a data-tel href="#"><span data-c="telephone"></span></a></p>
+    <p class="reseaux" id="reseaux"></p>
+    <p class="pied-petit">© <span id="annee"></span> Le Victor Hugo Burger</p>
+  </footer>
+
+  <a class="appel-mobile" data-tel href="#"><span data-t="mobile.appel">Commander à emporter</span></a>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

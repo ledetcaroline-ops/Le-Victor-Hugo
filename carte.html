@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La carte — Le Victor Hugo Burger</title>
+  <meta name="description" content="La carte du Victor Hugo : burgers maison servis avec frites ou coleslaw, burger du moment, menu enfant, desserts, glaces artisanales et formule petit-déjeuner.">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="annonce" id="annonce" hidden></div>
+
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, accueil">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="histoire.html" data-t="nav.histoire">Notre histoire</a>
+      <a href="carte.html" aria-current="page" data-t="nav.carte">La carte</a>
+      <a href="emporter.html" data-t="nav.emporter">À emporter</a>
+      <a href="infos.html" data-t="nav.infos">Infos &amp; accès</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Les burgers ===== -->
+    <section class="carte">
+      <div class="conteneur">
+        <p class="surtitre" data-c="saison"></p>
+        <h1 class="titre-page" data-t="carte.titre">Les burgers</h1>
+        <p class="carte-intro"><span data-t="carte.intro">Tous nos burgers sont servis avec frites ou coleslaw maison</span> · <strong data-c="prixBurger"></strong></p>
+
+        <div class="burgers" id="burgers"></div>
+
+        <article class="moment" id="moment">
+          <img src="" alt="" loading="lazy">
+          <div class="moment-texte">
+            <p class="moment-etiquette"><span aria-hidden="true">♥</span> <span data-t="moment.titre">Burger du moment</span></p>
+            <p class="surtitre" id="moment-mois"></p>
+            <h3 id="moment-nom"></h3>
+            <p id="moment-desc"></p>
+            <p class="moment-note" data-t="moment.note">Venez découvrir chaque mois un nouveau burger.</p>
+          </div>
+        </article>
+
+        <h2 class="desserts-titre" data-t="carte.desserts">Desserts</h2>
+        <div class="desserts" id="desserts-vignettes"></div>
+
+        <div class="carte-bas">
+          <div class="bloc">
+            <h3 data-t="carte.cotes">À côté</h3>
+            <div class="cote-photos">
+              <img src="images/photographe/frites.jpg" alt="Frites maison" loading="lazy">
+              <img src="images/photographe/coleslaw.jpg" alt="Coleslaw maison" loading="lazy">
+            </div>
+            <ul class="prix-liste" id="accompagnements"></ul>
+            <h4 data-t="carte.supplements">Suppléments</h4>
+            <ul class="prix-liste" id="supplements"></ul>
+          </div>
+          <div class="bloc">
+            <h3 data-t="carte.enfant">Menu enfant</h3>
+            <p class="bloc-sous" id="enfant-age"></p>
+            <ul class="prix-liste"><li><span id="enfant-nom"></span><span id="enfant-prix"></span></li></ul>
+            <p class="bloc-detail" id="enfant-desc"></p>
+          </div>
+          <div class="bloc">
+            <h3 data-t="carte.glaces">Glaces</h3>
+            <p class="bloc-sous" id="glaces-detail"></p>
+            <ul class="prix-liste" id="glaces-prix"></ul>
+            <p class="bloc-detail" id="glaces-parfums"></p>
+            <p class="bloc-detail" id="glaces-supp"></p>
+          </div>
+        </div>
+        <p class="allergenes" data-t="carte.allergenes">Une allergie ou une question sur un plat ? Demandez-nous, on vous dit tout sur nos ingrédients.</p>
+      </div>
+    </section>
+
+    <!-- ===== Le matin ===== -->
+    <section class="matin conteneur" id="matin">
+      <div class="matin-photos">
+        <img src="images/photographe/pancakes.jpg" alt="Pancakes à la banane et au chocolat avec un jus d’orange pressé" loading="lazy">
+        <img src="images/petit-dej-2.jpg" alt="Petit-déjeuner : brioche grillée, beurre, pâte à tartiner, café et jus d’orange" loading="lazy">
+      </div>
+      <div>
+        <p class="surtitre" data-t="matin.surtitre">Dès 9h30</p>
+        <h2 data-t="matin.titre">Le matin, on vous attend aussi !</h2>
+        <p data-t="matin.intro">Dès le matin, profitez d’un petit-déjeuner gourmand au Victor Hugo : pain brioché ou pancakes moelleux, accompagnés d’une boisson chaude.</p>
+        <div class="formule">
+          <p class="formule-titre"><span data-t="matin.formule">Formule petit-déjeuner</span> <strong id="petitdej-prix"></strong></p>
+          <p id="petitdej-desc"></p>
+          <p class="formule-choix" id="petitdej-choix"></p>
+          <p class="formule-option" id="petitdej-option"></p>
+        </div>
+        <p class="matin-gourmands" id="petitdej-gourmands"></p>
+      </div>
+    </section>
+
+    <section class="suite conteneur">
+      <a class="bouton bouton-plein" href="emporter.html" data-t="suite.emporter">Commander à emporter</a>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <img src="images/logo-beige.svg" alt="" width="110" height="104">
+    <p><strong>Le Victor Hugo Burger</strong><br><span data-c="adresse"></span></p>
+    <p><a data-tel href="#"><span data-c="telephone"></span></a></p>
+    <p class="reseaux" id="reseaux"></p>
+    <p class="pied-petit">© <span id="annee"></span> Le Victor Hugo Burger</p>
+  </footer>
+
+  <a class="appel-mobile" data-tel href="#"><span data-t="mobile.appel">Commander à emporter</span></a>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

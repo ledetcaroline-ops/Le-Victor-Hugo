@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À emporter — Le Victor Hugo Burger</title>
+  <meta name="description" content="Commandez vos burgers à emporter par téléphone au 03 21 06 88 37 et passez les récupérer au 3 place Gambetta, Montreuil-sur-Mer.">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="annonce" id="annonce" hidden></div>
+
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, accueil">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="histoire.html" data-t="nav.histoire">Notre histoire</a>
+      <a href="carte.html" data-t="nav.carte">La carte</a>
+      <a href="emporter.html" aria-current="page" data-t="nav.emporter">À emporter</a>
+      <a href="infos.html" data-t="nav.infos">Infos &amp; accès</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="emporter">
+      <div class="conteneur emporter-grille">
+        <div>
+          <p class="surtitre" data-t="emporter.surtitre">À emporter</p>
+          <h1 class="titre-page" data-t="emporter.titre">Envie d’un burger à la maison ?</h1>
+          <p data-t="emporter.intro">On ne prend pas de réservation pour manger sur place : venez directement, on vous trouve une table. Pour emporter, un simple coup de fil suffit.</p>
+          <ol class="etapes">
+            <li><strong data-t="emporter.e1t">Appelez-nous</strong><span data-t="emporter.e1">Pendant les heures d’ouverture, dites-nous ce qui vous fait envie.</span></li>
+            <li><strong data-t="emporter.e2t">On vous donne l’heure</strong><span data-t="emporter.e2">Le délai dépend du monde en cuisine, on vous dit quand passer.</span></li>
+            <li><strong data-t="emporter.e3t">Passez récupérer</strong><span data-t="emporter.e3">Votre commande vous attend au 3 place Gambetta, bien chaude.</span></li>
+          </ol>
+          <a class="bouton bouton-plein bouton-grand" data-tel href="#"><span data-t="emporter.appel">Appeler le</span> <span data-c="telephone"></span></a>
+          <p class="bientot" data-t="emporter.bientot">Bientôt : la commande en ligne, directement sur ce site.</p>
+        </div>
+        <img src="images/a-emporter.jpg" alt="Un burger et des frites dans une boîte à emporter">
+      </div>
+    </section>
+
+    <section class="suite conteneur">
+      <a class="bouton bouton-plein" href="carte.html" data-t="suite.carte">Découvrir la carte</a>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <img src="images/logo-beige.svg" alt="" width="110" height="104">
+    <p><strong>Le Victor Hugo Burger</strong><br><span data-c="adresse"></span></p>
+    <p><a data-tel href="#"><span data-c="telephone"></span></a></p>
+    <p class="reseaux" id="reseaux"></p>
+    <p class="pied-petit">© <span id="annee"></span> Le Victor Hugo Burger</p>
+  </footer>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Infos &amp; accès — Le Victor Hugo Burger</title>
+  <meta name="description" content="Le Victor Hugo, 3 place Gambetta à Montreuil-sur-Mer, en face de l’église. Ouvert du mardi au samedi, sans réservation. Accessible en fauteuil roulant.">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="annonce" id="annonce" hidden></div>
+
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, accueil">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="histoire.html" data-t="nav.histoire">Notre histoire</a>
+      <a href="carte.html" data-t="nav.carte">La carte</a>
+      <a href="emporter.html" data-t="nav.emporter">À emporter</a>
+      <a href="infos.html" aria-current="page" data-t="nav.infos">Infos &amp; accès</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="infos-photo">
+      <img src="images/terrasse.jpg" alt="La terrasse du Victor Hugo sur la place Gambetta au coucher du soleil">
+    </section>
+
+    <section class="infos conteneur">
+      <p class="surtitre" data-t="infos.surtitre">Infos pratiques</p>
+      <h1 class="titre-page" data-t="infos.titre">Nous trouver</h1>
+      <div class="infos-grille">
+        <div>
+          <h3 data-t="infos.adresse">Adresse</h3>
+          <p class="adresse" data-c="adresse"></p>
+          <ul class="acces">
+            <li data-t="infos.eglise">Sur la place Gambetta, en face de l’église</li>
+            <li data-t="infos.parking">Places de stationnement tout autour de la place</li>
+            <li data-t="infos.pmr">Accessible en fauteuil roulant</li>
+            <li data-t="infos.terrasse">Belle terrasse aux beaux jours</li>
+          </ul>
+          <a class="bouton bouton-plein" id="itineraire" target="_blank" rel="noopener" data-t="infos.itineraire">Itinéraire</a>
+
+          <h3 data-t="infos.horaires">Horaires</h3>
+          <dl class="horaires" id="horaires"></dl>
+          <p class="bloc-detail" data-t="infos.resa">Pas de réservation : premier arrivé, premier servi.</p>
+        </div>
+        <iframe class="plan" title="Plan : 3 place Gambetta, Montreuil-sur-Mer" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=3+place+Gambetta,+62170+Montreuil-sur-Mer&output=embed"></iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <img src="images/logo-beige.svg" alt="" width="110" height="104">
+    <p><strong>Le Victor Hugo Burger</strong><br><span data-c="adresse"></span></p>
+    <p><a data-tel href="#"><span data-c="telephone"></span></a></p>
+    <p class="reseaux" id="reseaux"></p>
+    <p class="pied-petit">© <span id="annee"></span> Le Victor Hugo Burger</p>
+  </footer>
+
+  <a class="appel-mobile" data-tel href="#"><span data-t="mobile.appel">Commander à emporter</span></a>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

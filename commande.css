@@ -1,0 +1,137 @@
+/* Page de commande en ligne — s'appuie sur les couleurs et boutons de style.css */
+
+.commande { padding-block: clamp(36px, 6vw, 72px) 120px; }
+.commande-tete { text-align: center; max-width: 680px; margin: 0 auto 36px; }
+.commande h1 {
+  font-family: var(--script); font-weight: 700; font-size: clamp(2.4rem, 6vw, 3.6rem);
+  color: var(--olive-fonce); margin-bottom: .2em; line-height: 1.05;
+}
+.commande-intro { color: var(--texte-doux); }
+.ferme {
+  background: var(--bordeaux); color: #fff; border-radius: var(--rayon);
+  padding: 14px 18px; font-weight: 600; margin-top: 1em;
+}
+
+.commande-grille { display: grid; grid-template-columns: 1fr 360px; gap: 36px; align-items: start; }
+.commande-grille > * { min-width: 0; }
+
+/* ---------- La carte ---------- */
+.categorie { padding-block: 0; }
+.categorie + .categorie { margin-top: 40px; }
+.categorie h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); margin-bottom: .1em; }
+.categorie-sous { color: var(--texte-doux); margin-bottom: 1em; }
+.categorie-liste { display: grid; gap: 12px; }
+.categorie-liste.avec-photos { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.article {
+  background: var(--beige); border: 1.5px solid var(--ligne); border-radius: var(--rayon);
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.categorie-liste:not(.avec-photos) .article { flex-direction: row; }
+.article img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.article-corps { padding: 14px 16px; display: flex; flex-direction: column; flex: 1; }
+.article h3 { font-size: 1.05rem; margin-bottom: .3em; }
+.article p { color: var(--texte-doux); font-size: .9rem; margin: 0 0 .8em; }
+.article-bas { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.article-prix { font-family: var(--titre); font-size: 1.1rem; color: var(--olive-fonce); }
+.bouton-petit {
+  padding: .55em 1.1em; font-size: .82rem; cursor: pointer;
+  background: var(--olive-fonce); color: var(--beige-logo); border: 0;
+}
+.bouton-petit:hover { background: var(--olive-tres-fonce); }
+
+/* ---------- Panier ---------- */
+.panier {
+  position: sticky; top: 92px;
+  background: var(--beige-clair); border: 1.5px solid var(--ligne); border-radius: calc(var(--rayon) * 1.2);
+  padding: 22px; box-shadow: 0 14px 30px -20px rgb(58 58 39 / .45);
+}
+.panier h2 { font-size: 2rem; margin-bottom: .3em; }
+.panier-vide { color: var(--texte-doux); font-style: italic; }
+.panier-lignes { list-style: none; margin: 0; padding: 0; }
+.panier-lignes li { padding: 10px 0; border-bottom: 1px dotted var(--ligne); }
+.ligne-haut { display: flex; justify-content: space-between; gap: 10px; font-weight: 600; }
+.ligne-details { margin: 2px 0 6px; font-size: .85rem; color: var(--texte-doux); }
+.ligne-actions { display: flex; gap: 6px; align-items: center; }
+.ligne-actions button {
+  border: 1.5px solid var(--ligne); background: var(--beige); color: var(--texte);
+  border-radius: 999px; min-width: 32px; height: 32px; cursor: pointer; font: inherit; font-size: .9rem;
+}
+.ligne-actions .ligne-retirer { margin-left: auto; border: 0; background: none; text-decoration: underline; color: var(--texte-doux); }
+.panier-total {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: var(--titre); text-transform: uppercase; letter-spacing: .08em; margin: 14px 0 18px;
+}
+.panier-total strong { font-size: 1.4rem; color: var(--olive-fonce); }
+
+#formulaire { display: grid; gap: 12px; }
+#formulaire label { display: grid; gap: 4px; font-weight: 600; font-size: .9rem; }
+#formulaire input, #formulaire select, #formulaire textarea {
+  font: inherit; font-weight: 400; padding: 10px 12px; color: var(--texte);
+  border: 1.5px solid var(--ligne); border-radius: 10px; background: #fff;
+}
+#formulaire input:focus, #formulaire select:focus, #formulaire textarea:focus { outline: 2px solid var(--olive); outline-offset: 1px; }
+.erreur { margin: 0; color: var(--bordeaux); font-weight: 600; font-size: .92rem; }
+.bouton-payer { width: 100%; font-size: 1rem; padding: 1em; cursor: pointer; }
+.bouton-payer:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.securite { margin: 0; text-align: center; font-size: .8rem; color: var(--texte-doux); }
+
+/* ---------- Fenêtre d'options ---------- */
+.options {
+  border: 0; border-radius: calc(var(--rayon) * 1.4); padding: 0;
+  width: min(460px, 100% - 32px); max-height: calc(100% - 32px);
+  background: var(--beige-clair); color: var(--texte);
+}
+.options::backdrop { background: rgb(58 58 39 / .55); }
+.options form { padding: 26px; position: relative; display: grid; gap: 14px; }
+.options h3 { font-size: 1.3rem; margin: 0 30px 0 0; }
+.options-desc { margin: 0; color: var(--texte-doux); font-size: .92rem; }
+.options fieldset { border: 1.5px solid var(--ligne); border-radius: 12px; padding: 10px 14px 12px; margin: 0; }
+.options fieldset[hidden], .options label[hidden] { display: none; }
+.options legend { font-family: var(--titre); text-transform: uppercase; letter-spacing: .08em; font-size: .85rem; padding: 0 6px; }
+.choix { display: flex; align-items: center; gap: 8px; padding: 5px 0; cursor: pointer; }
+.choix input { accent-color: var(--olive-fonce); width: 18px; height: 18px; }
+.choix-prix { margin-left: auto; color: var(--texte-doux); font-size: .9rem; }
+#options-parfum { display: grid; gap: 4px; font-weight: 600; font-size: .9rem; }
+#options-parfum select { font: inherit; padding: 10px 12px; border: 1.5px solid var(--ligne); border-radius: 10px; background: #fff; }
+.options-bas { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.options-bas .bouton { cursor: pointer; flex: 1; }
+.quantite { display: flex; align-items: center; gap: 10px; }
+.quantite button {
+  width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--ligne);
+  background: var(--beige); font-size: 1.2rem; cursor: pointer; color: var(--texte);
+}
+.quantite output { min-width: 1.5em; text-align: center; font-weight: 700; }
+.options-fermer {
+  position: absolute; top: 14px; right: 16px; border: 0; background: none;
+  font-size: 1.8rem; line-height: 1; cursor: pointer; color: var(--texte-doux);
+}
+
+/* ---------- Pied ---------- */
+.pied-commande { padding: 28px 16px; font-size: .92rem; }
+.pied-commande p { margin: 0; }
+
+/* ---------- Barre du panier (téléphone) ---------- */
+.barre-panier { display: none; }
+
+@media (max-width: 900px) {
+  .commande-grille { grid-template-columns: 1fr; }
+  .panier { position: static; }
+  .barre-panier:not([hidden]) {
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 30;
+    padding: 14px 20px; border-radius: 999px; text-decoration: none;
+    background: var(--olive-fonce); color: var(--beige-logo);
+    font: 500 .95rem var(--titre); text-transform: uppercase; letter-spacing: .08em;
+    box-shadow: 0 8px 24px rgb(0 0 0 / .3);
+  }
+}
+@media (max-width: 720px) {
+  .menu { display: flex; }
+  .menu a { font-size: .8rem; }
+}
+@media (max-width: 560px) {
+  .categorie-liste.avec-photos { grid-template-columns: 1fr; }
+  .categorie-liste.avec-photos .article { flex-direction: row; }
+  .categorie-liste.avec-photos .article img { width: 110px; aspect-ratio: auto; height: auto; min-height: 100%; }
+}
