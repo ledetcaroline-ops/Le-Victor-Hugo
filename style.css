@@ -381,3 +381,11 @@ section { padding-block: clamp(56px, 9vw, 110px); }
   html { scroll-behavior: auto; }
   .bouton { transition: none; }
 }
+
+/* ---------- Mentions légales ---------- */
+.legal { max-width: 780px; padding-top: clamp(40px, 6vw, 72px); padding-bottom: clamp(48px, 7vw, 88px); }
+.legal h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 1.6em 0 .4em; white-space: normal; }
+.legal p { color: var(--texte-doux); }
+.legal a { color: var(--olive-fonce); }
+.a-completer { background: #fff1a8; color: #6b5300; padding: 0 .3em; border-radius: 4px; font-weight: 600; }
+.legal-maj { margin-top: 2.4em; font-size: .85rem; }

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /version-2.html
+Disallow: /commander.html
+Disallow: /commande-confirmee.html
+
+Sitemap: https://levictorhugo-eight.vercel.app/sitemap.xml

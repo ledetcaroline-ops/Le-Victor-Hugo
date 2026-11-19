@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mentions légales — Le Victor Hugo Burger</title>
+  <meta name="description" content="Mentions légales du site du Victor Hugo Burger, 3 place Gambetta, Montreuil-sur-Mer.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/logo-olive.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Oswald:wght@400;500&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="annonce" id="annonce" hidden></div>
+
+  <header class="entete">
+    <a href="index.html" class="entete-logo" aria-label="Le Victor Hugo Burger, accueil">
+      <img src="images/logo-beige.svg" alt="" width="56" height="53">
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="histoire.html" data-t="nav.histoire">Notre histoire</a>
+      <a href="carte.html" data-t="nav.carte">La carte</a>
+      <a href="emporter.html" data-t="nav.emporter">À emporter</a>
+      <a href="infos.html" data-t="nav.infos">Infos &amp; accès</a>
+    </nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal conteneur">
+      <p class="surtitre">Informations légales</p>
+      <h1 class="titre-page">Mentions légales</h1>
+
+      <h2>Éditeur du site</h2>
+      <p>
+        Ce site est édité par :<br>
+        <strong>SHELBY</strong>, exploitant le restaurant Le Victor Hugo<br>
+        Société à responsabilité limitée (SARL)
+        au capital de 10 000 €<br>
+        Siège : 3 place Gambetta, 62170 Montreuil-sur-Mer, France<br>
+        SIRET : 990 095 705 00010 — RCS Boulogne-sur-Mer 990 095 705<br>
+        N° de TVA intracommunautaire : FR75 990 095 705<br>
+        Téléphone : <a data-tel href="#"><span data-c="telephone"></span></a><br>
+        E-mail : <a href="mailto:gaislin.emma@gmail.com">gaislin.emma@gmail.com</a>
+      </p>
+      <p>Directrice de la publication : Caroline Ledet</p>
+
+      <h2>Hébergement</h2>
+      <p>
+        Le site est hébergé par <strong>Vercel Inc.</strong><br>
+        440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis<br>
+        Site : <a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>
+      </p>
+
+      <h2>Propriété intellectuelle</h2>
+      <p>
+        L’ensemble du site (textes, logo, photographies, vidéos, mise en page) est la propriété du Victor Hugo Burger
+        ou de leurs auteurs. Toute reproduction, même partielle, sans autorisation écrite est interdite.
+      </p>
+      <p>Photographies et vidéos des plats : Yohan Viandier.</p>
+
+      <h2>Données personnelles</h2>
+      <p>
+        Ce site ne comporte ni formulaire, ni compte client, ni outil de mesure d’audience :
+        nous ne collectons aucune donnée personnelle vous concernant.
+      </p>
+      <p>
+        Pour mémoriser la langue que vous choisissez (français ou anglais), le site enregistre ce seul choix
+        dans votre navigateur. Cette information ne nous est pas transmise et vous pouvez l’effacer à tout moment
+        depuis les réglages de votre navigateur.
+      </p>
+      <p>
+        Le site utilise des services de Google : les polices d’écriture (Google Fonts) et le plan de la page
+        « Infos &amp; accès » (Google Maps). En affichant ces éléments, votre navigateur se connecte aux serveurs
+        de Google, qui peut recevoir votre adresse IP. Pour en savoir plus :
+        <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener">politique de confidentialité de Google</a>.
+      </p>
+      <p>
+        Pour toute question, ou pour exercer vos droits prévus par le Règlement général sur la protection des données (RGPD),
+        contactez-nous par téléphone ou par e-mail aux coordonnées ci-dessus. Vous pouvez aussi adresser une réclamation
+        à la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).
+      </p>
+
+      <h2>Liens</h2>
+      <p>
+        Le site contient des liens vers d’autres sites (Facebook, Instagram, avis Google, Google Maps).
+        Nous ne sommes pas responsables de leur contenu.
+      </p>
+
+      <p class="legal-maj">Dernière mise à jour : novembre 2026</p>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <img src="images/logo-beige.svg" alt="" width="110" height="104">
+    <p><strong>Le Victor Hugo Burger</strong><br><span data-c="adresse"></span></p>
+    <p><a data-tel href="#"><span data-c="telephone"></span></a></p>
+    <p class="reseaux" id="reseaux"></p>
+    <p class="pied-petit">© <span id="annee"></span> Le Victor Hugo Burger · <a href="mentions-legales.html" data-t="pied.mentions">Mentions légales</a></p>
+  </footer>
+
+  <a class="appel-mobile" data-tel href="#"><span data-t="mobile.appel">Commander à emporter</span></a>
+
+  <script src="contenu.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
