@@ -175,22 +175,47 @@ const CONTENU = {
     fr: "Des burgers faits maison avec des produits locaux, servis sur la place Gambetta.",
     en: "Homemade burgers with local produce, served on Place Gambetta."
   },
+  /* Notre histoire : un paragraphe par ligne.
+     Une ligne qui commence par "## " devient un petit titre,
+     une ligne qui commence par "~ " devient la signature. */
   histoire: {
     fr: [
-      "Au cœur de Montreuil-sur-Mer, Le Victor Hugo est un lieu de vie où l’on aime se retrouver, partager et profiter des plaisirs simples.",
-      "Depuis son ouverture en novembre 2025, le Victor Hugo cultive une idée simple : proposer une cuisine généreuse et faite maison, dans une ambiance conviviale et décontractée.",
-      "Ici, les burgers sont à l’honneur, préparés avec soin, accompagnés de frites maison et de recettes qui évoluent au fil des saisons. Une cuisine sans prétention, où le goût et la qualité des produits restent essentiels.",
-      "Mais le Victor Hugo, c’est aussi bien plus qu’un restaurant. C’est un café le matin, une pause gourmande dans l’après-midi, un verre entre amis en fin de journée ou un dîner à partager.",
-      "Un lieu vivant, accueillant et sans chichis, où l’on vient aussi bien pour manger que pour passer un bon moment.",
-      "Bienvenue au Victor Hugo, tout simplement."
+      "Il y a des villes que l’on découvre, et d’autres qui font partie de nous depuis toujours.",
+      "Pour nous, Montreuil-sur-Mer, c’est bien plus qu’une adresse. C’est une ville dans laquelle nous avons grandi, construit des souvenirs et imaginé notre avenir.",
+      "C’est ici, au cœur de cette ville chargée d’histoire, dans le Pas-de-Calais, que nous avons choisi, ensemble, de donner vie à notre projet : Le Victor Hugo, un restaurant convivial où le burger est à l’honneur.",
+      "## Un nom qui ne doit rien au hasard.",
+      "À Montreuil-sur-Mer, l’histoire de Victor Hugo et des Misérables occupe une place particulière. Une histoire à laquelle Maxime a lui-même participé, dans le spectacle qui fait vivre cette œuvre au cœur de notre ville.",
+      "Un attachement que l’on retrouve jusque dans notre carte, à travers des burgers qui racontent, à leur manière, un petit morceau de notre histoire.",
+      "## Notre idée ? Faire du burger une véritable cuisine.",
+      "Des produits sélectionnés avec soin, des producteurs et artisans de notre région, des recettes imaginées et travaillées par nos soins, des associations de saveurs qui évoluent au fil des saisons.",
+      "Nous aimons les choses simples, à condition qu’elles soient bien faites. Un bon pain, une belle viande, un fromage de caractère, une sauce maison… Chaque détail compte.",
+      "C’est ainsi que nous imaginons notre cuisine : des burgers faits maison, des recettes généreuses, des produits de qualité et une carte qui évolue au fil de nos envies et des saisons.",
+      "## Mais le Victor Hugo, c’est aussi notre envie de faire vivre un lieu.",
+      "Un café le matin, un déjeuner en famille, une pause dans l’après-midi, un verre entre amis ou un dîner autour d’un bon burger. Que vous soyez Montreuillois, de passage dans la région ou en visite sur la Côte d’Opale, nous voulions un endroit où chacun se sente bien, tout simplement.",
+      "Pour déjeuner ou dîner à Montreuil-sur-Mer, découvrir nos burgers maison, profiter d’un moment convivial ou commander à emporter, nous sommes heureux de vous accueillir place Gambetta.",
+      "Depuis le 6 novembre 2025, cette aventure est devenue notre quotidien.",
+      "Et derrière chaque assiette, chaque service et chaque sourire, il y a surtout deux personnes heureuses de faire vivre leur projet dans une ville qui leur tient à cœur.",
+      "Bienvenue chez nous.",
+      "~ Emma & Maxime"
     ],
     en: [
-      "In the heart of Montreuil-sur-Mer, Le Victor Hugo is a lively place where people love to get together, share and enjoy life’s simple pleasures.",
-      "Since opening in November 2025, the Victor Hugo has held on to one simple idea: generous, homemade food in a warm and relaxed atmosphere.",
-      "Burgers take centre stage here, made with care and served with homemade fries, alongside recipes that change with the seasons. Unpretentious food, where taste and quality ingredients come first.",
-      "But the Victor Hugo is much more than a restaurant. It’s a coffee in the morning, a sweet break in the afternoon, a drink with friends at the end of the day, or a dinner to share.",
-      "A lively, welcoming, no-fuss place, where you come as much to eat as to have a good time.",
-      "Welcome to the Victor Hugo, simply."
+      "Some towns you discover, and others have always been part of who you are.",
+      "For us, Montreuil-sur-Mer is much more than an address. It’s the town where we grew up, made our memories and dreamed up our future.",
+      "It’s here, in the heart of this historic town in the Pas-de-Calais, that we chose, together, to bring our project to life: Le Victor Hugo, a friendly restaurant where burgers take centre stage.",
+      "## A name chosen for a reason.",
+      "In Montreuil-sur-Mer, the story of Victor Hugo and Les Misérables holds a special place. Maxime has taken part in it himself, in the show that brings the novel to life in the heart of our town.",
+      "You’ll find that attachment right down to our menu, with burgers that each tell, in their own way, a little piece of our story.",
+      "## Our idea? To make burgers real cooking.",
+      "Carefully chosen ingredients, producers and craftspeople from our region, recipes we create and fine-tune ourselves, and flavour pairings that change with the seasons.",
+      "We love simple things, as long as they’re done well. Good bread, quality meat, a cheese with character, a homemade sauce… Every detail counts.",
+      "That’s how we see our cooking: homemade burgers, generous recipes, quality ingredients and a menu that changes with our ideas and the seasons.",
+      "## But the Victor Hugo is also about bringing a place to life.",
+      "A coffee in the morning, a family lunch, an afternoon break, a drink with friends or dinner over a good burger. Whether you live in Montreuil, are passing through or visiting the Opal Coast, we wanted a place where everyone simply feels at home.",
+      "For lunch or dinner in Montreuil-sur-Mer, to try our homemade burgers, enjoy a friendly moment or order takeaway, we’ll be happy to welcome you on Place Gambetta.",
+      "Since 6 November 2025, this adventure has been our everyday life.",
+      "And behind every plate, every service and every smile, there are above all two people happy to bring their project to life in a town close to their hearts.",
+      "Welcome to our place.",
+      "~ Emma & Maxime"
     ]
   },
 

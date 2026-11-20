@@ -14,7 +14,7 @@ const TEXTES = {
     "hero.carte": "Voir la carte", "hero.emporter": "Commander à emporter",
     "bandeau.jours": "Du mardi au samedi", "bandeau.resa": "Sans réservation",
     "bandeau.surplace": "Sur place ou à emporter",
-    "histoire.surtitre": "Notre histoire", "histoire.titre": "Le burger, version fait maison",
+    "histoire.surtitre": "Notre histoire", "histoire.titre": "Le Victor Hugo, restaurant de burgers maison à Montreuil-sur-Mer",
     "carte.titre": "Les burgers", "carte.intro": "Tous nos burgers sont servis avec frites ou coleslaw maison",
     "carte.cotes": "À côté", "carte.supplements": "Suppléments", "carte.enfant": "Menu enfant",
     "carte.desserts": "Desserts", "carte.glaces": "Glaces", "carte.vege": "Végétarien",
@@ -49,7 +49,7 @@ const TEXTES = {
     "hero.carte": "See the menu", "hero.emporter": "Order takeaway",
     "bandeau.jours": "Tuesday to Saturday", "bandeau.resa": "No reservations",
     "bandeau.surplace": "Eat in or takeaway",
-    "histoire.surtitre": "Our story", "histoire.titre": "Burgers, the homemade way",
+    "histoire.surtitre": "Our story", "histoire.titre": "Le Victor Hugo, a homemade burger restaurant in Montreuil-sur-Mer",
     "carte.titre": "Burgers", "carte.intro": "All burgers come with homemade fries or coleslaw",
     "carte.cotes": "Sides", "carte.supplements": "Extras", "carte.enfant": "Kids’ menu",
     "carte.desserts": "Desserts", "carte.glaces": "Ice cream", "carte.vege": "Vegetarian",
@@ -107,7 +107,10 @@ function afficher(lang) {
   $$("[data-c]").forEach((e) => {
     const v = C[e.dataset.c];
     if (Array.isArray(t(v))) {
-      e.replaceChildren(...t(v).map((p) => el("p", "", p)));
+      e.replaceChildren(...t(v).map((p) =>
+        p.startsWith("## ") ? el("h2", "histoire-intertitre", p.slice(3)) :
+        p.startsWith("~ ") ? el("p", "histoire-signature", p.slice(2)) :
+        el("p", "", p)));
     } else {
       e.textContent = t(v);
     }
